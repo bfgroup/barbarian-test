@@ -15,8 +15,9 @@ class Package(ConanFile):
     version = "0.0.0"
 
     def source(self):
-        shutil.copy(os.path.join("file1.txt"), os.path.join("src", "FILE1"))
-        shutil.copy(os.path.join("file2.txt"), os.path.join("src", "FILE2"))
+        os.mkdir("src")
+        shutil.copy("file1.txt", os.path.join("src", "file1.txt"))
+        shutil.copy("file2.txt", os.path.join("src", "file2.txt"))
 
     def build(self):
         pass
